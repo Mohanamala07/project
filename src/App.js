@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React ,{useEffect}from 'react'
+import { Routes, Route,useLocation } from "react-router-dom";
+import{Navbar} from "./components";
+const App = () => {
+  const location = useLocation();
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[location])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <Routes>
+
+      </Routes>
     </div>
   );
-}
+};
 
-export default App;
+export default App
